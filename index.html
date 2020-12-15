@@ -4,8 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Container for the page -->
+    <div class="container">
+        <!-- Frame for the calculator -->
+        <div class="calc-frame">
+            <!-- Frame for result of calculation -->
+            <div class="calc-result-frame">
+                <div class="calc-result-input">0</div>
+            </div>
+            <!-- Logo and ON button -->
+            <div class="flex-row">
+                <div class="calc-logo">McGinthy INSTRUMENTS</div>
+                <button class="calc-on">ON</button>
+            </div>
+            <!-- Buttons required for functionality of the calculator -->
+            <div class="flex-row">
+                <button class="calc-btn">7</button>
+                <button class="calc-btn">8</button>
+                <button class="calc-btn">9</button>
+                <button class="calc-btn">X</button>
+            </div>
+            <div class="flex-row">
+                <button class="calc-btn">4</button>
+                <button class="calc-btn">5</button>
+                <button class="calc-btn">6</button>
+                <button class="calc-btn ">-</button>
+            </div>
+            <div class="flex-row">
+                <button class="calc-btn">1</button>
+                <button class="calc-btn">2</button>
+                <button class="calc-btn">3</button>
+                <button class="calc-btn">+</button>
+            </div>
+            <div class="flex-row">
+                <button class="calc-btn flex-double">0</button>
+                <button class="calc-btn">.</button>
+                <button class="calc-btn">/</button>
+            </div>
+            <div class="flex-row">
+                <button class="calc-btn calc-enter">ENTER</button>
+            </div>
+        </div>
+    </div>
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+
 </body>
 </html>
