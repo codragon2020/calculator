@@ -81,7 +81,7 @@ body {
     color: #41403E;
     font-size: 2rem;
     width: 75px;
-    height: 75px;
+    margin-left: 3px;
     outline: none;
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
     border: solid 7px #41403E;
