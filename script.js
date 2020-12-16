@@ -18,23 +18,34 @@ $(document).ready(function() {
     });
 });
 
+var operatorChosen = false;
+
 // Function to determine if num1 is assigned, if it is num2 will be assigned 
 function handleNumber(num) {
-    if (num1 === '') {
-        num1 = num;
+    if (operatorChosen) {
+        num2 += num;
+        console.log('this is num2', num2)
+        displayButton(num2);
     } else {
-        num2 = num;
+        num1 += num;
+        console.log('this is num1', num1)
+        displayButton(num1);
     }
-    displayButton(num);
-}
+} 
 
 // Function to handle when an operator is pressed. If operator is empty, assign to operator, else call handleTotal function
 function handleOperator(oper) {
+    console.log('handleOperator is running')
     if (operator === '') {
         operator = oper;
+        console.log('operator is selected');
+        operatorChosen = true;
     } else {
+        console.log('operator is ? ');
         handleTotal();
+        console.log('handleTotal is running ? ');
         operator = oper;
+        
     }             
 }
 
@@ -47,6 +58,7 @@ function displayButton(btn) {
 // This function will create a total based on the operator pressed. 
 // Since there are multiple operators that can be pressed, we will use a case statement to handle them.
 function handleTotal() {
+    console.log('the handleTotal is running')
     switch (operator) {
         case '+':
             // Converts the strings to numbers
@@ -65,12 +77,13 @@ function handleTotal() {
             total = +num1 * +num2;
             displayButton(total);
             break;
+        
     }
     updateVariables();
 }
 
+// Function to reset the num1 and num2 variables after the handleTotal is complete
 function updateVariables() {
     num1 = total;
-    console.log('this is num1', num1);
     num2 = '';
 }
