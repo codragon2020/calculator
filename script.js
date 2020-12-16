@@ -3,16 +3,10 @@ let num2 = '';
 let operator = '';
 let total = '';
 
-// After using the interface the user may want to clear the calculator and try another calculation
-$('.clear-calc').click(function() {
-    location.reload();
-}); 
-
 $(document).ready(function() {
     // To determine whether a button or operator was clicked, I can compare e.target.innerHTML to see if it is between 0 and 9. 
     // If it is, the user clicked a number. If not, the user clicked an operator.
     $('button').on('click', function(e) {
-        console.log('e', e.target.innerHTML);
         let btn = e.target.innerHTML;
         if (btn >= '0' && btn <= '9') {
             handleNumber(btn);
@@ -28,28 +22,21 @@ var operatorChosen = false;
 function handleNumber(num) {
     if (operatorChosen) {
         num2 += num;
-        console.log('this is num2', num2)
         displayButton(num2);
     } else {
         num1 += num;
-        console.log('this is num1', num1)
         displayButton(num1);
     }
 } 
 
 // Function to handle when an operator is pressed. If operator is empty, assign to operator, else call handleTotal function
 function handleOperator(oper) {
-    console.log('handleOperator is running')
     if (operator === '') {
         operator = oper;
-        console.log('operator is selected');
         operatorChosen = true;
     } else {
-        console.log('operator is ? ');
         handleTotal();
-        console.log('handleTotal is running ? ');
         operator = oper;
-        
     }             
 }
 
@@ -62,7 +49,6 @@ function displayButton(btn) {
 // This function will create a total based on the operator pressed. 
 // Since there are multiple operators that can be pressed, we will use a case statement to handle them.
 function handleTotal() {
-    console.log('the handleTotal is running')
     switch (operator) {
         case '+':
             // Converts the strings to numbers
@@ -81,7 +67,6 @@ function handleTotal() {
             total = +num1 * +num2;
             displayButton(total);
             break;
-        
     }
     updateVariables();
 }
@@ -92,3 +77,7 @@ function updateVariables() {
     num2 = '';
 }
 
+// After using the interface the user may want to clear the calculator and try another calculation
+$('.clear-calc').click(function() {
+    location.reload();
+}); 
