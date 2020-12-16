@@ -5,7 +5,7 @@ let total = '';
 
 // Calculator ON - One of the first things a user may do is try to turn on the calculator
 // This will also come in handy if they want to clear the calculator
-$('.calc-on').click(function() {
+$('.clear-calc').click(function() {
     location.reload();
 }); 
 
