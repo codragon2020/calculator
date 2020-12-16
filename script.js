@@ -66,4 +66,11 @@ function handleTotal() {
             displayButton(total);
             break;
     }
+    updateVariables();
+}
+
+function updateVariables() {
+    num1 = total;
+    console.log('this is num1', num1);
+    num2 = '';
 }
