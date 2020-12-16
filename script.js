@@ -15,10 +15,10 @@ $(document).ready(function() {
     });
 });
 
-function handleNumber() {
-    
-};
-
-function handleOperator() {
-
-};
+function handleNumber(num) {
+    if (num1 === '') {
+        num1 = num;
+    } else {
+        num2 = num;
+    }
+}
