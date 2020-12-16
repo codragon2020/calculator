@@ -8,9 +8,17 @@ $(document).ready(function() {
         console.log('e', e.target.innerHTML);
         let btn = e.target.innerHTML;
         if (btn >= '0' && btn <= '9') {
-            console.log('number');
+            handleNumber(btn);
         } else {
-            console.log('operator');
+            handleOperator(btn);
         }
     });
 });
+
+function handleNumber() {
+    
+};
+
+function handleOperator() {
+
+};
