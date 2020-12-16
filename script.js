@@ -21,8 +21,14 @@ function handleNumber(num) {
     } else {
         num2 = num;
     }
+    displayButton(num);
 }
 
 function handleOperator(oper) {
     operator = oper;
+    // displayButton(oper);
+}
+
+function displayButton(btn) {
+    $('.calc-result-input').text(btn);
 }
