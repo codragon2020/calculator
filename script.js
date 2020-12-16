@@ -22,3 +22,7 @@ function handleNumber(num) {
         num2 = num;
     }
 }
+
+function handleOperator(oper) {
+    operator = oper;
+}
