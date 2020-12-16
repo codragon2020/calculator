@@ -28,10 +28,14 @@ function handleNumber(num) {
     displayButton(num);
 }
 
-// Function to handle when an operator is pressed. Assign the value to our operator variable.
+// Function to handle when an operator is pressed. If operator is empty, assign to operator, else call handleTotal function
 function handleOperator(oper) {
-    operator = oper;
-    // displayButton(oper);
+    if (operator === '') {
+        operator = oper;
+    } else {
+        handleTotal();
+        operator = oper;
+    }             
 }
 
 // Since we only update the display when the user presses a number
@@ -47,6 +51,18 @@ function handleTotal() {
         case '+':
             // Converts the strings to numbers
             total = +num1 + +num2;
+            displayButton(total);
+            break;
+        case '-':
+            total = +num1 - +num2;
+            displayButton(total);
+            break;
+        case '/':
+            total = +num1 / +num2;
+            displayButton(total);
+            break;
+        case 'X':
+            total = +num1 * +num2;
             displayButton(total);
             break;
     }
