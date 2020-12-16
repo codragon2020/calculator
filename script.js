@@ -3,6 +3,11 @@ let num2 = '';
 let operator = '';
 let total = '';
 
+// Calculator ON - One of the first things a user may do is try to turn on the calculator
+// This will also come in handy if they want to clear the calculator
+$('.calc-on').click(function() {
+    location.reload();
+}); 
 
 $(document).ready(function() {
     // To determine whether a button or operator was clicked, I can compare e.target.innerHTML to see if it is between 0 and 9. 
@@ -87,3 +92,4 @@ function updateVariables() {
     num1 = total;
     num2 = '';
 }
+
